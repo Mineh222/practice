@@ -1,0 +1,2 @@
+-- Pipe the user_data.sql seed file into the "interview" database.
+-- psql -d interview -U Mineh < user_data.sql;
