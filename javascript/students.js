@@ -86,3 +86,52 @@ const sumOfGroupAges = (students) => {
 }
 
 // console.log(sumOfGroupAges(students)); => 56
+
+// e. Produce the average age of students in group 2.
+
+const averageStudentAgeInGroup = (students) => {
+    let ageSum = 0;
+    let groupCount = 0;
+
+    students.forEach(student => {
+        if (student.group === 2) {
+            groupCount += 1;
+            ageSum += student.age;
+        }
+    })
+
+    return ageSum / groupCount;
+}
+
+// console.log(averageStudentAgeInGroup(students)); => 14.333333333333334
+
+// f. Add the additional students below to the existing list of students.
+
+const moreStudents = [
+    { "firstName":"Manu", "lastName": "Chao", "group":1, "age":17 },
+    { "firstName":"Shakira", "lastName": "Shakira", "group":2, "age":12 }
+];
+
+const addMoreStudents = (moreStudents, students) => {
+
+    moreStudents.forEach(student => {
+        students.push(student);
+    })
+
+    return students;
+}
+
+// console.log(addMoreStudents(moreStudents, students));
+// [
+//     { firstName: 'Ricardo', lastName: 'Arjona', group: 1, age: 14 },
+//     { firstName: 'Luis', lastName: 'Silva', group: 1, age: 14 },
+//     { firstName: 'Rocio', lastName: 'Durcal', group: 1, age: 15 },
+//     { firstName: 'Gloria', lastName: 'Estefan', group: 2, age: 14 },
+//     { firstName: 'Franco', lastName: 'De Vita', group: 2, age: 14 },
+//     { firstName: 'Emmanuelle', lastName: 'Beart', group: 1, age: 13 },
+//     { firstName: 'Etienne', lastName: 'Daho', group: 2, age: 15 },
+//     { firstName: 'Manu', lastName: 'Chao', group: 1, age: 17 },
+//     { firstName: 'Shakira', lastName: 'Shakira', group: 2, age: 12 }
+// ]
+
+
