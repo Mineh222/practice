@@ -8,7 +8,7 @@ let students = [
     { "firstName":"Etienne", "lastName": "Daho", "group":2, "age":15 }
 ];
 
-// Produce the total number of students in group 2.
+// a. Produce the total number of students in group 2.
 
 const groupSum = (students) => {
     let totalStudents = 0;
@@ -22,3 +22,26 @@ const groupSum = (students) => {
 }
 
 // console.log(groupSum(students)); => 3
+
+// b. Return a list of full names as strings.
+
+const fullNames = (students) => {
+    let fullNames = [];
+
+    students.forEach(student => {
+        fullNames.push(`${student.firstName} ${student.lastName}`)
+    })
+
+    return fullNames;
+}
+
+// console.log(fullNames(students))
+// [
+//     'Ricardo Arjona',
+//     'Luis Silva',
+//     'Rocio Durcal',
+//     'Gloria Estefan',
+//     'Franco De Vita',
+//     'Emmanuelle Beart',
+//     'Etienne Daho'
+// ]
