@@ -19,7 +19,7 @@ CREATE TABLE user_data (
     user_number INT NOT NULL,
     info_number INT NOT NULL,
     date_updated DATE NOT NULL,
-    quarter VARCHAR(50) NOT NULL,
+    quarter VARCHAR(50) NOT NULL
 );
 
 INSERT INTO users(user_number, first_name, last_name) VALUES
@@ -37,10 +37,9 @@ INSERT INTO career_info(info_number, info_type, info_name, info_amount_type, inf
     (2003461, 'Occupation', 'Lawyer', 'YearlyWage', 115820),
     (2003462, 'Occupation', 'Farm and Ranch Worker', 'YearlyWage', 27840);
 
-INSERT INTO user_data(user_number, info_number, date_updated) VALUES
-    (1003458, 200359, '2014-10-31', 'Q4 2014')
+INSERT INTO user_data(user_number, info_number, date_updated, quarter) VALUES
+    (1003458, 200359, '2014-10-31', 'Q4 2014'),
     (1003457, 2003461, '2022-10-26', 'Q4 2015'),
 	(1003458, 2003462, '2022-10-26', 'Q4 2016'),
 	(1003457, 2003460, '2016-11-03', 'Q4 2016'),
 	(1003456, 2003459, '2016-11-03', 'Q4 2016');
-
