@@ -26,13 +26,13 @@ const groupSum = (students) => {
 // b. Return a list of full names as strings.
 
 const fullNames = (students) => {
-    let fullNames = [];
+    const fullNamesList = [];
 
     students.forEach(student => {
-        fullNames.push(`${student.firstName} ${student.lastName}`)
+        fullNamesList.push(`${student.firstName} ${student.lastName}`)
     })
 
-    return fullNames;
+    return fullNamesList;
 }
 
 // console.log(fullNames(students))
@@ -45,3 +45,44 @@ const fullNames = (students) => {
 //     'Emmanuelle Beart',
 //     'Etienne Daho'
 // ]
+
+// c. Return a list of unique ages.
+
+const uniqueAges = (students) => {
+    const agesCount = {};
+    const uniqueAges = [];
+
+    for (let student of students) {
+        if (!(student.age in agesCount)) {
+            agesCount[student.age] = 1
+        } else {
+            agesCount[student.age] += 1
+        }
+    }
+
+    for (let age in agesCount) {
+        if (agesCount[age] === 1) {
+            uniqueAges.push(age)
+        }
+    }
+
+    return uniqueAges;
+}
+
+// console.log(uniqueAges(students)); => [ '13' ]
+
+// d. Return  the sum of the age of all students in group 1.
+
+const sumOfGroupAges = (students) => {
+    let sum = 0;
+
+    students.forEach(student => {
+        if (student.group === 1) {
+            sum += student.age;
+        }
+    })
+
+    return sum;
+}
+
+// console.log(sumOfGroupAges(students)); => 56
