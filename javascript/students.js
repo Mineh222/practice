@@ -90,7 +90,7 @@ const uniqueAges = (students) => {
 // space: O(1)
 
 const sumOfGroupAges = (students) => {
-    let sum = 0;
+    let ageSum = 0;
 
     students.forEach(student => {
         if (student.group === 1) {
@@ -98,7 +98,7 @@ const sumOfGroupAges = (students) => {
         }
     })
 
-    return sum;
+    return ageSum;
 }
 
 // console.log(sumOfGroupAges(students)); => 56

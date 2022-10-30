@@ -20,3 +20,17 @@ SELECT
     END AS "fiscal_year"
 FROM user_data
 INNER JOIN users ON (user_data.user_number = users.user_number);
+
+
+/*
+Write a SQL query (a single query) that will return the
+first and last name of the users who don’t have any saved occupations.
+*/
+
+SELECT users.first_name, users.last_name
+FROM users
+LEFT JOIN user_data ON (users.user_number = user_data.user_number)
+WHERE user_data.info_number
+IN (SELECT career_info.info_number
+    FROM career_info
+    WHERE career_info.info_type != "Occupation");
