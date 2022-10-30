@@ -1,0 +1,17 @@
+API = Application Programming Interface
+
+APIs are interfaces that abstract away the inner workings of complex
+packages of code so a developer can worry only about the input
+and output.
+
+Common uses of Web API = store, share, & update data
+
+All you need to do is know where and how you need to send your request
+to get the data you need, or perform the action you desire.
+
+REST APIs:
+A web API server should be able to accept all methods
+(GET, POST, PUT/PATCH and DELETE) in a request.
+
+A Web API's main role is to transmit data, usually in the form of JSON,
+and perform CRUD actions. It can render HTML pages, but is not its primary role.
