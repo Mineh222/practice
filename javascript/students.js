@@ -122,16 +122,46 @@ const addMoreStudents = (moreStudents, students) => {
 }
 
 // console.log(addMoreStudents(moreStudents, students));
-// [
-//     { firstName: 'Ricardo', lastName: 'Arjona', group: 1, age: 14 },
-//     { firstName: 'Luis', lastName: 'Silva', group: 1, age: 14 },
-//     { firstName: 'Rocio', lastName: 'Durcal', group: 1, age: 15 },
-//     { firstName: 'Gloria', lastName: 'Estefan', group: 2, age: 14 },
-//     { firstName: 'Franco', lastName: 'De Vita', group: 2, age: 14 },
-//     { firstName: 'Emmanuelle', lastName: 'Beart', group: 1, age: 13 },
-//     { firstName: 'Etienne', lastName: 'Daho', group: 2, age: 15 },
-//     { firstName: 'Manu', lastName: 'Chao', group: 1, age: 17 },
-//     { firstName: 'Shakira', lastName: 'Shakira', group: 2, age: 12 }
-// ]
+students = [
+    { firstName: 'Ricardo', lastName: 'Arjona', group: 1, age: 14 },
+    { firstName: 'Luis', lastName: 'Silva', group: 1, age: 14 },
+    { firstName: 'Rocio', lastName: 'Durcal', group: 1, age: 15 },
+    { firstName: 'Gloria', lastName: 'Estefan', group: 2, age: 14 },
+    { firstName: 'Franco', lastName: 'De Vita', group: 2, age: 14 },
+    { firstName: 'Emmanuelle', lastName: 'Beart', group: 1, age: 13 },
+    { firstName: 'Etienne', lastName: 'Daho', group: 2, age: 15 },
+    { firstName: 'Manu', lastName: 'Chao', group: 1, age: 17 },
+    { firstName: 'Shakira', lastName: 'Shakira', group: 2, age: 12 }
+]
 
+// g. Update the age of some students
 
+const updates = [
+    { "firstName":"Manu", "lastName": "Chao", "group":1, "age":18 },
+    { "firstName":"Shakira", "lastName": "Shakira", "group":2, "age":14 }
+];
+
+const updateAges = (updates, students) => {
+    updates.forEach(update => {
+        students.forEach(student => {
+            if ( student.firstName === update.firstName && student.lastName === update.lastName ) {
+                student.age = update.age
+            }
+        });
+    })
+    return students;
+}
+
+// console.log(updateAges(updates, students))
+
+students = [
+    { firstName: 'Ricardo', lastName: 'Arjona', group: 1, age: 14 },
+    { firstName: 'Luis', lastName: 'Silva', group: 1, age: 14 },
+    { firstName: 'Rocio', lastName: 'Durcal', group: 1, age: 15 },
+    { firstName: 'Gloria', lastName: 'Estefan', group: 2, age: 14 },
+    { firstName: 'Franco', lastName: 'De Vita', group: 2, age: 14 },
+    { firstName: 'Emmanuelle', lastName: 'Beart', group: 1, age: 13 },
+    { firstName: 'Etienne', lastName: 'Daho', group: 2, age: 15 },
+    { firstName: 'Manu', lastName: 'Chao', group: 1, age: 18 },
+    { firstName: 'Shakira', lastName: 'Shakira', group: 2, age: 14 }
+]
