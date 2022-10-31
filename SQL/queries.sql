@@ -23,7 +23,7 @@ The fiscal year is defined as July 1st through June 30th.
 
 SELECT
     CONCAT(users.first_name,' ',users.last_name) AS "full_name",
-    CASE WHEN date_part('month', user_data.date_updated) > 8 THEN date_part('year', user_data.date_updated) + 1
+    CASE WHEN date_part('month', user_data.date_updated) >= 7 THEN date_part('year', user_data.date_updated) + 1
          ELSE date_part('year', user_data.date_updated)
     END AS "fiscal_year"
 FROM user_data

@@ -11,7 +11,7 @@ let students = [
 // a. Produce the total number of students in group 2.
 // Complexities:
 // n = length of array
-// time: 0(n)
+// time: O(n)
 // space: O(1)
 
 const groupSum = (students) => {
@@ -30,7 +30,7 @@ const groupSum = (students) => {
 // b. Return a list of full names as strings.
 // Complexities:
 // n = length of array
-// time: 0(n)
+// time: O(n)
 // space: O(n)
 
 const fullNames = (students) => {
@@ -57,7 +57,7 @@ const fullNames = (students) => {
 // c. Return a list of unique ages.
 // Complexities:
 // n = length of array
-// time: 0(n)
+// time: O(n)
 // space: O(n)
 
 const uniqueAges = (students) => {
@@ -86,7 +86,7 @@ const uniqueAges = (students) => {
 // d. Return  the sum of the age of all students in group 1.
 // Complexities:
 // n = length of array
-// time: 0(n)
+// time: O(n)
 // space: O(1)
 
 const sumOfGroupAges = (students) => {
@@ -94,7 +94,7 @@ const sumOfGroupAges = (students) => {
 
     students.forEach(student => {
         if (student.group === 1) {
-            sum += student.age;
+            agesum += student.age;
         }
     })
 
@@ -106,7 +106,7 @@ const sumOfGroupAges = (students) => {
 // e. Produce the average age of students in group 2.
 // Complexities:
 // n = length of array
-// time: 0(n)
+// time: O(n)
 // space: O(1)
 
 const averageStudentAgeInGroup = (students) => {
@@ -128,7 +128,7 @@ const averageStudentAgeInGroup = (students) => {
 // f. Add the additional students below to the existing list of students.
 // Complexities:
 // n = length of array
-// time: 0(n)
+// time: O(n)
 // space: O(n)
 
 const moreStudents = [
@@ -161,7 +161,7 @@ students = [
 // g. Update the age of some students
 // Complexities:
 // n = length of array
-// time: 0(n^2)
+// time: O(n^2)
 // space: O(n)
 
 const updates = [

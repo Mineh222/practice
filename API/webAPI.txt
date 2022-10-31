@@ -9,9 +9,24 @@ Common uses of Web API = store, share, & update data
 All you need to do is know where and how you need to send your request
 to get the data you need, or perform the action you desire.
 
-REST APIs:
-A web API server should be able to accept all methods
+- web API server should be able to accept all methods
 (GET, POST, PUT/PATCH and DELETE) in a request.
+
+RESTful APIs:
+- Representational State Transfer
+- architectural constraints:
+    1. Decoupled client-server: The client and the server should be decoupled so
+     that they can evolve separately without any dependence on one another.
+    2. Stateless: This means that there is no necessary session between the client
+     and the server. Data received from the server can be used by the client independently.
+     This allows you to have short discrete operations. Luckily, this is a natural fit for
+     HTTP operations in which requests are intended to be independent and short-lived.
+    3. Uniform interface: RESTful endpoints are meant to be self-describing and uniform in
+     their definition. Each operation is intended to be separated by a separate endpoint or URL.
+     In practical real world terms, most RESTful endpoints implement the classic CRUD
+     (Create, Read, Update, Delete) operations against a resource that could just happen to be
+     in your data model. This uniformity allows developers to easily learn the usage pattern of
+     each endpoint.
 
 A Web API's main role is to transmit data, usually in the form of JSON,
 and perform CRUD actions. It can render HTML pages, but is not its primary role.
