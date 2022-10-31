@@ -28,5 +28,14 @@ RESTful APIs:
      in your data model. This uniformity allows developers to easily learn the usage pattern of
      each endpoint.
 
-A Web API's main role is to transmit data, usually in the form of JSON,
+A Web API's main role is to transmit data between different systems, usually in the form of JSON,
 and perform CRUD actions. It can render HTML pages, but is not its primary role.
+
+My experience:
+- I've created Web APIS in my applications. My first experience was in my first application, PAWS,
+where I used express.js to implement REST APIs following RESTful protocols to perform CRUD actions.
+- For example, I defined a router with a get method with this endpoint that is responsible
+for returning all daycare records as json.
+- that is where I created web APIs in my backend and in my frontend using Redux I've consumed
+my internal APIs
+- postman

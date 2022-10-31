@@ -3,17 +3,21 @@ Write a SQL query that gets the users’ first and last name
 as one field and the year they were last updated in the UserData table.
 */
 
-SELECT CONCAT(users.first_name,' ',users.last_name) AS "full_name", date_part('year', user_data.date_updated) AS "year"
-FROM user_data
-INNER JOIN users ON (user_data.user_number = users.user_number);
+SELECT
+	CONCAT(users.first_name, ' ', users.last_name) AS "full_name",
+	date_part('year', u.date_updated) AS "year"
+FROM user_data AS u
+LEFT JOIN users
+	ON users.user_number = u.user_number
+WHERE
+	u.date_updated = (SELECT MAX(d.date_updated) FROM user_data AS d WHERE d.user_number = u.user_number);
+
 
 --   full_name   | year
 -- --------------+------
---  Minnie Mouse | 2015
 --  Yosemite Sam | 2016
 --  Minnie Mouse | 2016
 --  Bugs Bunny   | 2016
---  Yosemite Sam | 2014
 
 /*
 Modify the SQL query from question 1 so that it returns the
@@ -23,19 +27,21 @@ The fiscal year is defined as July 1st through June 30th.
 
 SELECT
     CONCAT(users.first_name,' ',users.last_name) AS "full_name",
-    CASE WHEN date_part('month', user_data.date_updated) >= 7 THEN date_part('year', user_data.date_updated) + 1
-         ELSE date_part('year', user_data.date_updated)
+    CASE WHEN date_part('month', u.date_updated) >= 7 THEN date_part('year', u.date_updated) + 1
+         ELSE date_part('year', u.date_updated)
     END AS "fiscal_year"
-FROM user_data
-INNER JOIN users ON (user_data.user_number = users.user_number);
+FROM user_data AS u
+LEFT JOIN users
+	ON users.user_number = u.user_number
+WHERE
+	u.date_updated = (SELECT MAX(d.date_updated) FROM user_data AS d WHERE d.user_number = u.user_number);
+
 
 --   full_name   | fiscal_year
 -- --------------+-------------
---  Minnie Mouse |        2016
 --  Yosemite Sam |        2017
 --  Minnie Mouse |        2017
 --  Bugs Bunny   |        2017
---  Yosemite Sam |        2015
 
 
 /*
